@@ -17,7 +17,7 @@ class AccountMove(models.Model):
             #obtener las líneas del asiento que son líneas de impuesto (las que tienen tax_line_id).
             tax_lines = move.line_ids.filtered(lambda line: line.tax_line_id)
             #obtener las líneas consideradas base para el impuesto (sobre esas líneas se calcula la base imponible )
-            base_lines = move.line_ids.filtered(lambda line: line.display_type == 'product')
+            base_lines = move.line_ids.filtered(lambda line: bool(line.product_id))
 
             # Si hay impuestos, recalculamos
             if tax_lines and base_lines:
