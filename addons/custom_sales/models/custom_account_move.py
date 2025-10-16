@@ -39,5 +39,6 @@ class AccountMove(models.Model):
                             'amount_currency': tax_amount_foreign,
                         })
 
+        """corrigimos la fuente (las líneas) y dejamos que el motor nativo haga el resto."""
         # Ahora llamamos al super para que recalcule los totales
         super()._compute_amount()
