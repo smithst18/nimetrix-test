@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo>
+    <data>
+        <record id="custom_view_sale_order_form" model="ir.ui.view">
+            <field name="name">custom.view.sale.order.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form" />
+            <field name="arch" type="xml">
+                <!--MODIFY BUTTON NAME WITH CUSTOM METHOD-->
+                <xpath expr="//button[8]" position="attributes">
+                    <attribute name="name">action_confirm_order</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
